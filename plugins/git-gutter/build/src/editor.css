@@ -1,0 +1,114 @@
+:root {
+  --gutter-surface: #ffffff;
+  --gutter-foreground: #1f2328;
+  --gutter-muted: #6b7280;
+  --gutter-font-size: 13px;
+  --gutter-line-height: 1.5;
+  --gutter-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --gutter-selection: color-mix(in srgb, var(--orca-primary, #3b82f6) 28%, transparent);
+  --gutter-active-line: color-mix(in srgb, var(--orca-foreground, #1f2328) 5%, transparent);
+  --gutter-caret: #1f2328;
+  --gutter-added: #2ea043;
+  --gutter-modified: #d2a220;
+  --gutter-deleted: #d14343;
+  --gutter-shaded: color-mix(in srgb, var(--orca-muted-foreground, #6b7280) 55%, transparent);
+}
+
+:root.dark {
+  --gutter-surface: #1e1e1e;
+  --gutter-foreground: #e6e6e6;
+  --gutter-muted: #9aa0a6;
+  --gutter-caret: #ececec;
+  --gutter-active-line: color-mix(in srgb, var(--orca-foreground, #e6e6e6) 8%, transparent);
+  --gutter-added: #3fb950;
+  --gutter-modified: #e3b341;
+  --gutter-deleted: #f85149;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--orca-background, var(--gutter-surface));
+  color: var(--orca-foreground, var(--gutter-foreground));
+}
+
+#editor {
+  height: 100%;
+}
+
+#editor.notice {
+  padding: 16px;
+  font-family: var(--gutter-mono);
+  color: var(--orca-muted-foreground, var(--gutter-muted));
+}
+
+#editor .cm-editor {
+  height: 100%;
+  font-family: var(--gutter-mono);
+  font-size: var(--orca-editor-font-size, var(--gutter-font-size));
+}
+
+#editor .cm-scroller {
+  overflow: auto;
+  line-height: var(--orca-editor-line-height, var(--gutter-line-height));
+}
+
+#editor .cm-content {
+  caret-color: var(--orca-caret, var(--gutter-caret));
+}
+
+#editor .cm-cursor {
+  border-left-color: var(--orca-caret, var(--gutter-caret));
+}
+
+#editor .cm-selectionBackground {
+  background: var(--gutter-selection) !important;
+}
+
+#editor .cm-activeLine {
+  background: var(--gutter-active-line);
+}
+
+#editor .cm-activeLineGutter {
+  background: var(--gutter-active-line);
+}
+
+#editor .cm-gutters {
+  background: var(--orca-background, var(--gutter-surface));
+  color: var(--orca-muted-foreground, var(--gutter-muted));
+  border-right: 1px solid color-mix(in srgb, var(--orca-muted-foreground, var(--gutter-muted)) 25%, transparent);
+}
+
+#editor .cm-gutter-git {
+  width: 6px;
+}
+
+#editor .cm-gutter-git-marker {
+  width: 4px;
+  height: 100%;
+  margin: 0 1px;
+  border-radius: 2px;
+}
+
+#editor .cm-gutter-git-added {
+  background: var(--gutter-added);
+}
+
+#editor .cm-gutter-git-modified {
+  background: var(--gutter-modified);
+}
+
+#editor .cm-gutter-git-deleted {
+  background: var(--gutter-deleted);
+}
+
+#editor .cm-gutter-git-shaded {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--gutter-shaded),
+    var(--gutter-shaded) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+}
