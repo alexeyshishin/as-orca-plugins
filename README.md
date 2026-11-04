@@ -9,7 +9,7 @@ A monorepo of independent plugins for [Orca](https://github.com/stablyai/orca). 
 | Plugin | Folder | What it does |
 |--------|--------|--------------|
 | Live Markdown (`alexeyshishin.live-markdown`) | [plugins/live-markdown](plugins/live-markdown) | Obsidian-style Live Preview for `.md` files: headings, bold, italic, code, tables with cell editing, code blocks with syntax highlighting, checkboxes, links (internet, anchors, workspace files), hanging indent in lists. Markup markers are revealed only on the node under the cursor. Enabled manually with an icon in the view switcher. Details: [plugin README](plugins/live-markdown/README.md). |
-| Git Gutter (`alexeyshishin.git-gutter`) | [plugins/git-gutter](plugins/git-gutter) | In development: a colored bar to the left of the line number showing added, modified and deleted lines based on `git diff`. So far only the folder skeleton exists. Details: [plugin README](plugins/git-gutter/README.md). |
+| Git Gutter (`alexeyshishin.git-gutter`) | [plugins/git-gutter](plugins/git-gutter) | In development: a colored bar to the left of the line number showing added (green), modified (yellow) and deleted (red) lines against `git HEAD`, with a hatched bar for files it cannot resolve. No syntax highlighting yet. Enabled manually with an icon in the view switcher. Not yet listed in the catalog. Details: [plugin README](plugins/git-gutter/README.md). |
 
 A new plugin = a new `plugins/<id>/` folder following the rules below + one entry in `orca-catalog.json` + one row in this table.
 
