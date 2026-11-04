@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stablyai/orca/main/docs/schemas/plugins/orca-plugin.v2.schema.json",
+  "manifestVersion": 2,
+  "id": "live-markdown",
+  "name": "Live Markdown",
+  "version": "0.1.0",
+  "description": "Obsidian-style live preview editing for Markdown files: headings, bold, italic and code are rendered while you type, and the markup stays hidden except around the formatting you are editing.",
+  "author": {
+    "name": "alexeyshishin",
+    "url": "https://github.com/alexeyshishin"
+  },
+  "repository": "https://github.com/alexeyshishin/as-orca-plugins",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "execution": "trusted-worker",
+  "pluginApi": 1,
+  "main": "worker/main.mjs",
+  "capabilities": [{ "kind": "workspace:read" }, { "kind": "workspace:write" }],
+  "engines": {
+    "orca": ">=1.4.248"
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "id": "live-preview",
+        "title": "Live Markdown",
+        "extensions": [".md", ".markdown"],
+        "entry": "editor/index.html",
+        "priority": "option",
+        "contentKind": "text"
+      }
+    ]
+  }
+}

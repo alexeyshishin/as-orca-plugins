@@ -1,0 +1,7 @@
+node_modules/
+.orca/
+.claude/
+.memory-bank/
+swarm-report/
+AGENTS.md
+CLAUDE.md
